@@ -31,7 +31,7 @@ export PATH=$PYTHONUSERBASE/bin:$PATH
 
 #then, if you need* to install python libraries, do so like this:
 
-# *that is, you're not using my area!
+# that is, you're not using my area!
 
 pip install --user jupyter metakernel zmq
 
