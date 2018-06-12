@@ -4,3 +4,4 @@
 #include "gallery/ValidHandle.h"
 #include "canvas/Persistency/Common/FindMany.h"
 #include "canvas/Persistency/Common/FindOne.h"
+#include "canvas/Persistency/Common/Assns.h"
