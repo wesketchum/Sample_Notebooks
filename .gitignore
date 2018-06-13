@@ -1,0 +1,8 @@
+**/*ACLiC*
+.ipynb_checkpoints
+**/.ipynb_checkpoints
+**/.nfs*
+*~
+**/*~
+**/*.d
+**/*.so
