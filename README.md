@@ -69,6 +69,10 @@ ssh -L localhost:8888:localhost:8888 <remote_machine>.fnal.gov
 Where the 8888 matches the port number, and <remote_machine> is the gpvm or whatever you started the notebook from. Then, copy the link from the ROOT notebook start into your local browser (it contains a token to authenticate that you have write access to that area), and you should see the notebook area in a nice browsable format!
 
 ## Using the notebooks
-Walk through some of the examples a bit, and lookup online for more information on ROOT, PyROOT, notebookes, and the like. 
+Walk through some of the examples a bit, and lookup online for more information on ROOT, PyROOT, notebookes, and the like. The suggested order is:
+1. ROOT_Example.ipynb
+2. ROOT_CPP_Kernel_Example.ipynb
+3. Analyze_MCTruth.ipynb
+4. SpaceCharge_Example.ipynb
 
 Have fun!
