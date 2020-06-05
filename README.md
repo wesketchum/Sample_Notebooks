@@ -12,7 +12,7 @@ These are mostly made using the ROOT kernel for jupyter notebooks. You can read 
 Typically, you want to setup the version of larsoft you will be using first. For MicroBooNE, that's something like:
 ```
 source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone.sh
-setup uboonecode v06_80_02 -qe15:prof
+setup uboonecode v08_55_00 -qe19:prof
 ```
 Consult your experiment's documentation/local expert/slack channel for what you should do.
 
@@ -45,7 +45,7 @@ Then for running ROOT notebooks, you will need to make sure Jupyter, Metakernel,
 pip install --user jupyter metakernel zmq
 ```
 
-## Starting the ROOT notebook
+## Starting the ROOT notebook the impatient way
 In the directory where you have your notebooks, do the following:
 ```
 root --notebook
@@ -60,6 +60,24 @@ OK, when you do that, you should see an output like:
 ```
 
 Also, it will try to start a browser locally. Just exit out of it as soon as it pops up unless you want to use a browser over the connection. If not, move on to setting up the port forwarding.
+
+## Starting the ROOT notebook, the Jupyter way
+You may prefer to just the typical `jupyter` command to startup the notebook (since maybe you don't even want to start a ROOT kernel!). You can do that by doing:
+```
+jupyter notebook --no-browser
+```
+and you should see a similar message to the above, except with no annoying browser popping up. You can also checkout jupyter documenation for specifying a port and etc.
+
+But, you will likely need to add some configuration information to get the ROOT kernel working within that. First, copy in the kernel info by doing the following:
+```
+mkdir -p ~/.jupyter/kernels
+cp -r $ROOTSYS/etc/notebook/kernels/root ~/.jupyter/kernals/
+```
+
+Then, to get some of the javascript magic working, you may also need to add this line to the jupyter config file (typically in `~/.jupyter/jupyter_notebook_config.py`, create it if it's not there)
+```
+c.NotebookApp.extra_static_paths = ['$ROOTSYS/js']
+```
 
 ## Port forwarding
 Note the port number in that link in the above example: it's 8888. Then, from your machine, do something like:
